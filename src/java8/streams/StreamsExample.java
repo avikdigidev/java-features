@@ -11,7 +11,7 @@ public class StreamsExample {
 
         int max1 = Arrays.stream(arr1).max().getAsInt();
         System.out.println(max1);
-        OptionalInt max2 = Arrays.asList(arr).stream().mapToInt(v -> v)
+        OptionalInt max2 = Arrays.stream(arr).mapToInt(v -> v)
                 .max();
         System.out.println(max2.getAsInt());
 
