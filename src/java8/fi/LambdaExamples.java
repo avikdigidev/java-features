@@ -31,12 +31,13 @@ public class LambdaExamples {
         };
         int[] max = p.getMax(new int[]{5, 4, 1, 2, 3, 56, 87});
         System.out.println(Arrays.toString(max));
-        PMaxFuncInterface p2 = LambdaExamples::getArrayPrefixMax;
+        LambdaExamples l = new LambdaExamples();
+        PMaxFuncInterface p2 = l::getArrayPrefixMax;
         int[] max1 = p2.getMax(new int[]{5, 4, 1, 288, 3, 56, 87});
         System.out.println(Arrays.toString(max1));
     }
 
-    private static int[] getArrayPrefixMax(int[] arr) {
+    private  int[] getArrayPrefixMax(int[] arr) {
         int n = arr.length;
         int[] pMax = new int[n];
         for (int i = 0; i < n; i++) {
