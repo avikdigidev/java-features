@@ -4,13 +4,15 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class LambdaExamples {
     public static void main(String[] args) {
-        Comparator<String> isAnagram = (s1, s2) -> s1.compareTo(s2);
-        System.out.println(isAnagram.compare("abc", "cba"));
-
+        Comparator<String> stringCompare = String::compareTo;
+        System.out.println(stringCompare.compare("abc", "cba"));
+Function<Integer,Integer> f = t -> (t*t);
+        System.out.println(f.apply(3));
         BiConsumer<Integer, Integer> bs = (i1, i2) -> System.out.println(i1 + i2);
         bs.accept(3, 5);
         Consumer<Double> cd = (d) -> System.out.println(d);
